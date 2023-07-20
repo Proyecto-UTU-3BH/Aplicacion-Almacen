@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio</title>
+  <link rel="stylesheet" href="/Css/Estilohomepage.css">
+</head>
+
+<body>
+    <section class="BarraNavegacion">
+      <div class="sidebar">
+        <div class="side-hide">
+          <i class="fa-solid fa-circle-xmark"></i>
+        </div>
+        <img src="/Imagenes/LogoDelSistema.png" width="120" alt="LogoDelSistema">
+        <ul>
+          <li><a href="Html/">Perfil</a></li>
+          <li><a href="/Html/homepageAlmacen.html">Inventario</a></li>
+          <li><a href="/Html/ingresarPaquete.html">Ingresar Paquete</a></li>
+          <li><a href="/Html/crearLote.html">Crear lote</a></li>
+          <li><a href="/Html/asignarLote.html">Asignar lote</a></li>
+          <li class="cerrarseison"><a href="Html/">Cerrar Sesion</a></li>
+        </ul>
+      </div>
+      <div class="content">
+
+      <div class="encimatabla">
+        <div class="AbrirMenu">
+          <i class="fa-solid fa-bars" id="Hamburgesa"></i>
+        </div>
+  
+        <h2>Lotes</h2>
+        <hr>
+      </div>
+    </div>
+  </section>
+  <script src="https://kit.fontawesome.com/e30b2b0b69.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script>
+    $('.AbrirMenu').on('click', function () {
+      $(".BarraNavegacion").toggleClass('show');
+    })
+
+    $('.side-hide').on('click', function () {
+      $(".BarraNavegacion").toggleClass('show');
+    });
+    
+    $('.dropbtn').on('click', function () {
+      $('.dropdown-content').toggleClass('show');
+    });
+
+    window.onclick = function (event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName('dropdown-content');
+        for (var i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
