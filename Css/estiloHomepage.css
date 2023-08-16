@@ -92,49 +92,10 @@ hr {
   left: 0;
 }
 
-/* Center the table */
-table {
-  background-color: #d2ecf9;
-  width: 60%;
-  margin: auto;
-  margin-top: 50px; /* Adjust this value as needed to control the vertical position */
-}
 
 th,
 td {
   font-size: 30px;
   text-align: center;
   padding: 20px;
-}
-
-/* Responsive adjustments */
-
-@media only screen and (max-width: 768px) {
-  .sidebar {
-    width: 100%;
-    float: none;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 10px;
-  }
-
-  .sidebar img {
-    margin: 10px 0;
-    width: 100px;
-  }
-
-  .BarraNavegacion.show {
-    left: 0;
-  }
-
-  .content h2 {
-    margin-left: 0;
-  }
-
-  table {
-    width: 90%;
-    margin-top: 20px;
-  }
 }

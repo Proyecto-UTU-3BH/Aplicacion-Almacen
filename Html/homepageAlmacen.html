@@ -16,7 +16,7 @@
       </div>
       <img src="/Imagenes/LogoDelSistema.png" width="120" alt="LogoDelSistema">
       <ul>
-        <li><a href="Html/">Perfil</a></li>
+        <li><a href="/Html/perfil.html">Perfil</a></li>
         <li><a href="/Html/homepageAlmacen.html">Inventario</a></li>
         <li><a href="/Html/ingresarPaquete.html">Ingresar Paquete</a></li>
         <li><a href="/Html/crearLote.html">Crear lote</a></li>
@@ -88,17 +88,7 @@
       $('.dropdown-content').toggleClass('show');
     });
 
-    window.onclick = function (event) {
-      if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName('dropdown-content');
-        for (var i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
-      }
-    }
+
   </script>
 </body>
 
