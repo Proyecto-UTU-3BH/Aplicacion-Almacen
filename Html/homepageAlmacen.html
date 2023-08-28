@@ -9,87 +9,69 @@
 </head>
 
 <body>
-  <section class="BarraNavegacion">
-    <div class="sidebar">
-      <div class="side-hide">
-        <i class="fa-solid fa-circle-xmark"></i>
-      </div>
-      <img src="/Imagenes/LogoDelSistema.png" width="120" alt="LogoDelSistema">
-      <ul>
-        <li><a href="/Html/perfil.html">Perfil</a></li>
-        <li><a href="/Html/homepageAlmacen.html">Inventario</a></li>
-        <li><a href="/Html/ingresarPaquete.html">Ingresar Paquete</a></li>
-        <li><a href="/Html/crearLote.html">Crear lote</a></li>
-        <li><a href="/Html/asignarLote.html">Asignar lote</a></li>
-        <li class="cerrarseison"><a href="Html/">Cerrar Sesion</a></li>
-      </ul>
-    </div>
-    <div class="content">
+  <div id="mySidenav" class="sidenav">
+    <img src="/Imagenes/LogoDelSistema.png" width="120" alt="LogoDelSistema">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/Html/Perfil.html">Perfil</a>
+    <a href="/Html/homepageAlmacen.html">Ver Paquetes</a>
+    <a href="/Html/ingresarPaquete.html">Ingresar Paquetes</a>
+    <a href="/Html/crearLote.html">Crear Lote</a>
+    <a href="/Html/asignarLote.html">Asignar Lote</a>
+    <a class="cerrarseison" href="Html/">Cerrar Sesion</a>
+  </div>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 
-      <div class="encimatabla">
-        <div class="AbrirMenu">
-          <i class="fa-solid fa-bars" id="Hamburgesa"></i>
-        </div>
-  
-        <h2>Lotes</h2>
-        <hr>
-      </div>
-      
-      <table class="default">
-        <div class="Titulos">
-          <tr>
-            <th>ID Producto</th>
-            <th>Destino</th>
-            <th>Tipo</th>
-            <th>Peso</th>
-          </tr>
-        </div>
-
-        <tr>
-          <td>1</td>
-          <td>Montevideo</td>
-          <td>Carta</td>
-          <td>0.200</td>
-        </tr>
-
-        <tr>
-          <td>2</td>
-          <td>Salto</td>
-          <td>Paquete Chico</td>
-          <td>3.000</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Montevideo</td>
-          <td>Paquete grande</td>
-          <td>24.500</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>Durazno</td>
-          <td>Sobre</td>
-          <td>0.500</td>
-        </tr>
-      </table>
-    </div>
-  </section>
-  <script src="https://kit.fontawesome.com/e30b2b0b69.js" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script>
-    $('.AbrirMenu').on('click', function () {
-      $(".BarraNavegacion").toggleClass('show');
-    })
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
 
-    $('.side-hide').on('click', function () {
-      $(".BarraNavegacion").toggleClass('show');
-    });
-
-    $('.dropbtn').on('click', function () {
-      $('.dropdown-content').toggleClass('show');
-    });
-
-
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
   </script>
+
+  <h2>Lotes</h2>
+
+  <table class="default">
+    <div class="Titulos">
+      <tr>
+        <th>ID Lote</th>
+        <th>Destino</th>
+        <th>Ubicacion</th>
+        <th>Entregado</th>
+      </tr>
+    </div>
+
+
+    <tr>
+      <td>1</td>
+      <td>Montevideo</td>
+      <td>En transito</td>
+      <td>No</td>
+    </tr>
+
+    <tr>
+      <td>1</td>
+      <td>Montevideo</td>
+      <td>En transito</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Montevideo</td>
+      <td>En transito</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Montevideo</td>
+      <td>En transito</td>
+      <td>No</td>
+    </tr>
+  </table>
+  </div>
+
 </body>
 
 </html>
