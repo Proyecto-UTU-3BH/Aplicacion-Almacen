@@ -9,7 +9,6 @@ body {
   background-color: #1eb7d9;
 }
 
-
 .sidenav {
   height: 100%;
   width: 0;
@@ -36,6 +35,11 @@ body {
   margin-top: 300px;
 }
 
+.perfil {
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
 .sidenav a:hover {
   color: #f1f1f1;
 }
@@ -56,12 +60,6 @@ body {
   .sidenav a {
     font-size: 18px;
   }
-}
-
-hr {
-  border: solid #d2ecf9;
-  height: 4px;
-  background-color: #fff;
 }
 
 .sidenav img {
