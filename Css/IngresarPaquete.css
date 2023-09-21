@@ -35,11 +35,6 @@ body {
   margin-top: 300px;
 }
 
-.perfil {
-  margin-bottom: 50px;
-  margin-top: 20px;
-}
-
 .sidenav a:hover {
   color: #f1f1f1;
 }
@@ -65,7 +60,7 @@ body {
 .sidenav img {
   width: 120;
   display: block;
-  margin: 0px auto;
+  margin:0 50px 20px 45px;
   opacity: 0.7;
 }
 
@@ -83,22 +78,3 @@ h2 {
   left: 0;
 }
 
-th,
-td,
-tr {
-  margin-top: 30%;
-  font-size: 30px;
-  text-align: center;
-}
-
-table {
-  background-color: #d2ecf9;
-  width: 60%;
-  margin: auto;
-
-}
-
-
-td {
-  padding: 20px;
-}
