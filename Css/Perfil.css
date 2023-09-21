@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #1eb7d9;
+  background-color: #1eb7d9 !important;
 }
 
 .sidenav {
@@ -71,4 +71,8 @@ body {
   margin-bottom: 19px;
   margin-top: 2px;
   text-align: center;
+}
+
+#guardarPerfil {
+  color: #fffdfd;
 }
