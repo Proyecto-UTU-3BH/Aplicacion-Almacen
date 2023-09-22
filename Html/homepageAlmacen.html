@@ -12,27 +12,25 @@
   <div id="mySidenav" class="sidenav">
     <img src="/Imagenes/LogoDelSistema.png" width="120" alt="LogoDelSistema">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a class="perfil" href="/Html/Perfil.html">Perfil</a>
+    <a href="/Html/Perfil.html">Perfil</a>
+    <a href="/Html/homepageAlmacen.html">Ver Paquetes</a>
     <a href="/Html/ingresarPaquete.html">Ingresar Paquetes</a>
-    <a href="/Html/homepageAlmacen.html">Inventario</a>
-    <a href="/Html/crearLote.html">Crear Lote</a>
+    <a href="/Html/verLote.html">Ver Lote</a>
     <a href="/Html/asignarLote.html">Asignar Lote</a>
     <a class="cerrarseison" href="Html/">Cerrar Sesion</a>
-  </div>
-  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+</div>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 
-  <script>
+<script>
     function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("mySidenav").style.width = "250px";
     }
 
     function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("mySidenav").style.width = "0";
     }
-  </script>
-
-  <h2>Lotes</h2>
-
+</script>
+<h2>Listado de paquetes</h2>
   <table class="default">
     <div class="Titulos">
       <tr>

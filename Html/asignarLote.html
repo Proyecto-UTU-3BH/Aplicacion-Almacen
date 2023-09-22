@@ -15,22 +15,56 @@
     <a href="/Html/Perfil.html">Perfil</a>
     <a href="/Html/homepageAlmacen.html">Ver Paquetes</a>
     <a href="/Html/ingresarPaquete.html">Ingresar Paquetes</a>
-    <a href="/Html/crearLote.html">Crear Lote</a>
+    <a href="/Html/verLote.html">Ver Lote</a>
     <a href="/Html/asignarLote.html">Asignar Lote</a>
     <a class="cerrarseison" href="Html/">Cerrar Sesion</a>
-  </div>
-  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+</div>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 
-  <script>
+<script>
     function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("mySidenav").style.width = "250px";
     }
 
     function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("mySidenav").style.width = "0";
     }
-  </script>
-  <h2>Lotes</h2>
+</script>
+  <h2>Asignar Lote</h2>
+  <body>
+    <div class="container">
+        <form action="procesar_formulario.php" method="POST">
+            <div class="form-group">
+                <label for="id_lote">ID Lote:</label>
+                <input type="text" id="id_lote" name="id_lote" required>
+            </div>
+
+            <div class="form-group">
+                <label for="id_producto">ID Producto:</label>
+                <input type="text" id="id_producto" name="id_producto" required>
+            </div>
+
+            <div class="form-group">
+                <label for="id_vehiculo">ID Vehiculo:</label>
+                <input type="text" id="id_vehiculo" name="id_vehiculo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="id_usuario">ID Usuario:</label>
+                <input type="text" id="id_usuario" name="id_usuario" required>
+            </div>
+
+            <div class="form-group">
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha" required>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Enviar Datos">
+            </div>
+        </form>
+    </div>
+</body>
 
 </body>
 

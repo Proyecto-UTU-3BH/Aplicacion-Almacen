@@ -15,22 +15,62 @@
     <a href="/Html/Perfil.html">Perfil</a>
     <a href="/Html/homepageAlmacen.html">Ver Paquetes</a>
     <a href="/Html/ingresarPaquete.html">Ingresar Paquetes</a>
-    <a href="/Html/crearLote.html">Crear Lote</a>
+    <a href="/Html/verLote.html">Ver Lote</a>
     <a href="/Html/asignarLote.html">Asignar Lote</a>
     <a class="cerrarseison" href="Html/">Cerrar Sesion</a>
-  </div>
-  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+</div>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 
-  <script>
+<script>
     function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("mySidenav").style.width = "250px";
     }
 
     function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("mySidenav").style.width = "0";
     }
-  </script>
-  <h2>Lotes</h2>
+</script>
+  <h2>Ingrese datos del paquete</h2>
+
+  <form id="encomienda-form">
+
+    <label for="Peso">Peso (kg):</label>
+    <input type="number" id="Peso" name="Peso" step="0.01" required>
+
+    <label for="Destino">Destino:</label>
+    <input type="text" id="Destino" name="Destino" required>
+
+    <label for="Remitente">Remitente:</label>
+    <input type="text" id="Remitente" name="Remitente" required>
+
+    <label for="NombreDestinatario">Nombre del Destinatario:</label>
+    <input type="text" id="NombreDestinatario" name="NombreDestinatario" required>
+
+    <label for="FormadeEntrega">Forma de Entrega:</label>
+    <select id="FormadeEntrega" name="FormadeEntrega" required>
+        <option value="Entrega a domicilio">Entrega a domicilio</option>
+        <option value="Entrega en oficina">Pick Up</option>
+    </select>
+
+    <label for="Calle">Calle:</label>
+    <input type="text" id="Calle" name="Calle" required>
+
+    <label for="NumeroPuerta">Número de Puerta:</label>
+    <input type="text" id="NumeroPuerta" name="NumeroPuerta" required>
+
+    <label for="Tipo">Tipo de Encomienda:</label>
+    <select id="Tipo" name="Tipo" required>
+      <option value="carta">Carta</option>
+      <option value="sobre-chico">Sobre Chico</option>
+      <option value="sobre-grande">Sobre Grande</option>
+      <option value="paquete-chico">Paquete Chico</option>
+      <option value="paquete-mediano">Paquete Mediano</option>
+      <option value="paquete-grande">Paquete Grande</option>
+      <option value="otro">Otro</option>
+  </select>
+
+    <input type="submit" value="Enviar">
+</form>
 
 </body>
 
