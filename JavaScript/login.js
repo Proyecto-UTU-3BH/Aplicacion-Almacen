@@ -1,0 +1,43 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const alerta = document.getElementById("alerta");
+    const btnLogin= document.getElementById("login");
+
+    btnLogin.addEventListener("click", () => {
+        let email = document.getElementById("usuario").value;
+        let password = document.getElementById("password").value;
+
+        let info = {
+            "username": email,
+            "password": password,
+            "grant_type": "password",
+            "client_id": 1,
+            "client_secret": "x21mzlq0ijQMy6IewvJcp5X9pzxjo79rfrldaboD"
+        }
+
+        fetch("http://localhost:8000/oauth/token", {
+            method: "POST",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: new URLSearchParams(info).toString(),
+        })
+        .then((response) => {
+            if (response.ok) {
+                return response.json(); 
+            } else {
+                alerta.textContent = "Credenciales inválidas. Inténtelo de nuevo.";
+                alerta.style.display = "block";
+            }
+        })
+        .then((data) => {
+            
+            localStorage.setItem("access_token", data.access_token);
+        
+            location.href = "homepageAlmacen.html";
+        })
+        .catch((error) => {
+            console.error("Error de red: ", error);
+        });
+    }); 
+}); 
