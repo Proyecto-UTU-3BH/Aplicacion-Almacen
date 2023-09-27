@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
     const alerta = document.getElementById("alerta");
-    const btnLogin= document.getElementById("login");
+    const loginForm = document.getElementById("loginForm");
 
-    btnLogin.addEventListener("click", () => {
+    loginForm.addEventListener("submit", function (event) {
+        event.preventDefault(); 
+
         let email = document.getElementById("usuario").value;
         let password = document.getElementById("password").value;
 
@@ -31,13 +33,12 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         })
         .then((data) => {
-            
             localStorage.setItem("access_token", data.access_token);
-        
             location.href = "homepageAlmacen.html";
         })
         .catch((error) => {
             console.error("Error de red: ", error);
         });
     }); 
-}); 
+});
+
