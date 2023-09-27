@@ -1,13 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    const token = localStorage.getItem("access_token");
+    if (token==null){
+        location.href="index.html";
+    }
+
     const cerrarSesion = document.getElementById("logOut");
     
     cerrarSesion.addEventListener("click", () => {
-        
-        const accessToken = localStorage.getItem("access_token");
 
         const headers = {
-            "Authorization": "Bearer " + accessToken
+            "Authorization": "Bearer " + token
         };
 
         fetch("http://localhost:8000/api/logout", {
