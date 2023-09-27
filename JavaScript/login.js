@@ -28,8 +28,12 @@ document.addEventListener("DOMContentLoaded", function () {
             if (response.ok) {
                 return response.json(); 
             } else {
-                alerta.textContent = "Credenciales inválidas. Inténtelo de nuevo.";
-                alerta.style.display = "block";
+                Swal.fire({
+                    title: 'Credenciales inválidas',
+                    text: 'Por favor, verifique su correo electrónico y contraseña.',
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                });
             }
         })
         .then((data) => {
