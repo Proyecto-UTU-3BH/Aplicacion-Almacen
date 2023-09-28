@@ -1,6 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const alerta = document.getElementById("alerta");
+
     const loginForm = document.getElementById("loginForm");
+
+    let token = localStorage.getItem('access_token');
+    if (token!=null) {
+        location.href="homepageAlmacen.html"
+    }
 
     loginForm.addEventListener("submit", function (event) {
         event.preventDefault(); 
