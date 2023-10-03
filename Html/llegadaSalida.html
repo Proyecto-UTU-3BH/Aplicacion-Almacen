@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inicio</title>
-  <link rel="stylesheet" href="/Css/Homepage.css">
-  <script src="/JavaScript/cerrarSesion.js"></script>
+  <link rel="stylesheet" href="/Css/LlegadaSalida.css">
+  <!--<script src="/JavaScript/cerrarSesion.js"></script>-->
 </head>
 
 <body>
@@ -32,45 +32,31 @@
         document.getElementById("mySidenav").style.width = "0";
     }
 </script>
-<h2>Listado de paquetes</h2>
-  <table class="default">
-    <div class="Titulos">
-      <tr>
-        <th>ID Lote</th>
-        <th>Destino</th>
-        <th>Ubicacion</th>
-        <th>Entregado</th>
-      </tr>
-    </div>
+  <h2>Ingrese datos del vehiculo</h2>
 
+  <form id="encomienda-form">
 
-    <tr>
-      <td>1</td>
-      <td>Montevideo</td>
-      <td>En transito</td>
-      <td>No</td>
-    </tr>
+    <label for="Ruta">Ruta:</label>
+    <input type="text" id="Ruta" name="Ruta" required>
 
-    <tr>
-      <td>1</td>
-      <td>Montevideo</td>
-      <td>En transito</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>Montevideo</td>
-      <td>En transito</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>Montevideo</td>
-      <td>En transito</td>
-      <td>No</td>
-    </tr>
-  </table>
-  </div>
+    <label for="Almacen">Almacén:</label>
+    <input type="text" id="Almacén" name="Almacén" required>
+
+    <label for="ID Vehiculo">ID Vehiculo:</label>
+    <input type="number" id="ID Vehiculo" name="ID Vehiculo" required>
+
+    <label for="Hora llegada">Hora llegada:</label>
+    <input type="text" id="Hora llegada" name="Hora llegada" required>
+
+    <label for="Hora salida">Hora salida:</label>
+    <input type="text" id="Hora salida" name="Hora salida" required>
+
+    <label for="fecha">Fecha:</label>
+    <input type="date" id="fecha" name="fecha" required>
+    
+    <input type="submit" value="Enviar">
+</form>
+
 
 </body>
 

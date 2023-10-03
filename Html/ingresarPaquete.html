@@ -18,6 +18,7 @@
     <a href="/Html/ingresarPaquete.html">Ingresar Paquetes</a>
     <a href="/Html/verLote.html">Ver Lote</a>
     <a href="/Html/asignarLote.html">Asignar Lote</a>
+    <a href="/Html/llegadaSalida.html">Llegada y salida de camiones</a>
     <a class="cerrarseison" href="#" id="logOut">Cerrar Sesion</a>
 </div>
 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
@@ -35,17 +36,17 @@
 
   <form id="encomienda-form">
 
-    <label for="Peso">Peso (kg):</label>
-    <input type="number" id="Peso" name="Peso" step="0.01" required>
-
-    <label for="Destino">Destino:</label>
-    <input type="text" id="Destino" name="Destino" required>
-
     <label for="Remitente">Remitente:</label>
     <input type="text" id="Remitente" name="Remitente" required>
 
     <label for="NombreDestinatario">Nombre del Destinatario:</label>
     <input type="text" id="NombreDestinatario" name="NombreDestinatario" required>
+
+    <label for="Peso">Peso (kg):</label>
+    <input type="number" id="Peso" name="Peso" step="0.01" required>
+
+    <label for="Destino">Destino:</label>
+    <input type="text" id="Destino" name="Destino" required>
 
     <label for="FormadeEntrega">Forma de Entrega:</label>
     <select id="FormadeEntrega" name="FormadeEntrega" required>
@@ -54,10 +55,10 @@
     </select>
 
     <label for="Calle">Calle:</label>
-    <input type="text" id="Calle" name="Calle" required>
+    <input type="text" id="Calle" name="Calle" >
 
     <label for="NumeroPuerta">Número de Puerta:</label>
-    <input type="text" id="NumeroPuerta" name="NumeroPuerta" required>
+    <input type="text" id="NumeroPuerta" name="NumeroPuerta" >
 
     <label for="Tipo">Tipo de Encomienda:</label>
     <select id="Tipo" name="Tipo" required>
@@ -71,6 +72,17 @@
   </select>
 
     <input type="submit" value="Enviar">
+</form>
+
+<form id="encomienda-form">
+      <label for="id_lote">ID Almacen:</label>
+      <input type="text" id="id_almacen" name="id_almacen" required>
+
+      <label for="id_producto">ID Producto:</label>
+      <input type="text" id="id_producto" name="id_producto" required>
+
+      <input type="submit" value="Enviar Datos">
+
 </form>
 
 </body>
