@@ -82,8 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
             "numero_de_puerta": numero_de_puerta,
         };
 
-        console.log(JSON.stringify(info));
-
         const token = localStorage.getItem("access_token");
 
         const urlModificar = "http://localhost:8001/api/usuarios/"+idUsuario;

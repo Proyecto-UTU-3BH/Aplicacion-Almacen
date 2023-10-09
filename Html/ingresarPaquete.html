@@ -7,6 +7,7 @@
   <title>Inicio</title>
   <link rel="stylesheet" href="/Css/IngresarPaquete.css">
   <script src="/JavaScript/cerrarSesion.js"></script>
+  <script src="/JavaScript/ingresarPaquete.js"></script>
 </head>
 
 <body>
@@ -20,21 +21,21 @@
     <a href="/Html/asignarLote.html">Asignar Lote</a>
     <a href="/Html/llegadaSalida.html">Llegada y salida de camiones</a>
     <a class="cerrarseison" href="#" id="logOut">Cerrar Sesion</a>
-</div>
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+  </div>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 
-<script>
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-    }
+  <script>
+      function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+      }
 
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-    }
-</script>
+      function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+      }
+  </script>
   <h2>Ingrese datos del paquete</h2>
 
-  <form id="encomienda-form">
+  <form id="ingresarPaquete">
 
     <label for="Remitente">Remitente:</label>
     <input type="text" id="Remitente" name="Remitente" required>
@@ -49,9 +50,9 @@
     <input type="text" id="Destino" name="Destino" required>
 
     <label for="FormadeEntrega">Forma de Entrega:</label>
-    <select id="FormadeEntrega" name="FormadeEntrega" required>
-        <option value="Entrega a domicilio">Entrega a domicilio</option>
-        <option value="Entrega en oficina">Pick Up</option>
+    <select id="FormaDeEntrega" name="FormadeEntrega" required>
+        <option value="reparto">Entrega a domicilio</option>
+        <option value="pick up">Pick Up</option>
     </select>
 
     <label for="Calle">Calle:</label>
@@ -62,28 +63,30 @@
 
     <label for="Tipo">Tipo de Encomienda:</label>
     <select id="Tipo" name="Tipo" required>
-      <option value="carta">Carta</option>
-      <option value="sobre-chico">Sobre Chico</option>
-      <option value="sobre-grande">Sobre Grande</option>
-      <option value="paquete-chico">Paquete Chico</option>
-      <option value="paquete-mediano">Paquete Mediano</option>
-      <option value="paquete-grande">Paquete Grande</option>
-      <option value="otro">Otro</option>
+      <option value="Carta">Carta</option>
+      <option value="Sobre chico">Sobre Chico</option>
+      <option value="Sobre grande">Sobre Grande</option>
+      <option value="Paquete chico">Paquete Chico</option>
+      <option value="Paquete mediano">Paquete Mediano</option>
+      <option value="Paquete grande">Paquete Grande</option>
+      <option value="Otro">Otro</option>
   </select>
 
     <input type="submit" value="Enviar">
-</form>
+  </form>
 
-<form id="encomienda-form">
-      <label for="id_lote">ID Almacen:</label>
-      <input type="text" id="id_almacen" name="id_almacen" required>
+  <form id="encomienda-form">
+        <label for="id_lote">ID Almacen:</label>
+        <input type="text" id="id_almacen" name="id_almacen" required>
 
-      <label for="id_producto">ID Producto:</label>
-      <input type="text" id="id_producto" name="id_producto" required>
+        <label for="id_producto">ID Producto:</label>
+        <input type="text" id="id_producto" name="id_producto" required>
 
-      <input type="submit" value="Enviar Datos">
+        <input type="submit" value="Enviar Datos">
 
-</form>
+  </form>
+
+  <script src="/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script> 
 
 </body>
 
