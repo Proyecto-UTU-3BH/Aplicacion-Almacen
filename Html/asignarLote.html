@@ -7,6 +7,7 @@
   <title>Inicio</title>
   <link rel="stylesheet" href="/Css/AsignarLote.css">
   <script src="/JavaScript/cerrarSesion.js"></script>
+  <script src="/JavaScript/asignarLote.js"></script>
 </head>
 
 <body>
@@ -35,7 +36,7 @@
   <h2>Asignar Lote</h2>
   <body>
     <div class="container">
-        <form action="procesar_formulario.php" method="POST">
+        <form id="asignarLote">
             <div class="form-group">
                 <label for="id_lote">ID Lote:</label>
                 <input type="text" id="id_lote" name="id_lote" required>
@@ -43,7 +44,12 @@
 
             <div class="form-group">
                 <label for="id_producto">ID Producto:</label>
-                <input type="text" id="id_producto" name="id_producto" required>
+                <textarea id="producto_ids" name="producto_ids" required>
+Ingrese los ID de Producto separados por un Enter, ejemplo:
+1
+2
+3
+                </textarea>
             </div>
 
             <div class="form-group">
@@ -62,7 +68,7 @@
             </div>
 
             <div class="form-group">
-                <input type="submit" value="Enviar Datos">
+                <input type="submit" value="Asignar">
             </div>
         </form>
     </div>

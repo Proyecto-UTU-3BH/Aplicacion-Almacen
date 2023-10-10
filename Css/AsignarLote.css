@@ -93,12 +93,17 @@ label {
 }
 
 input[type="text"],
-input[type="date"] {
+input[type="date"],
+textarea {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 3px;
+}
+
+textarea {
+  height: 250px;
 }
 
 input[type="submit"] {
