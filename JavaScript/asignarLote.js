@@ -50,8 +50,19 @@ document.addEventListener('DOMContentLoaded', function () {
           if (response.ok) {
             location.reload();
           } else {
-            const errorMessage = await response.text(); 
-            console.error("Error en la solicitud:", errorMessage);
+            if (response.status === 403) {
+              const errorData = await response.json(); 
+              const errorMessages = Object.values(errorData).join('\n'); 
+
+              const formattedErrorMessages = errorMessages.split('\n').join('<br>');
+              
+              Swal.fire({
+                icon: 'error',
+                title: 'Error en la solicitud',
+                html: '<div style="text-align: left;">' + formattedErrorMessages + '</div>',
+                footer: '<div style="text-align: left;">Errores de validación:</div>',
+            });
+            }
           }
         })
         .catch(error => {
