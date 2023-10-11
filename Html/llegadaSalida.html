@@ -7,6 +7,7 @@
   <title>Inicio</title>
   <link rel="stylesheet" href="/Css/LlegadaSalida.css">
   <script src="/JavaScript/cerrarSesion.js"></script>
+  <script src="/JavaScript/llegadaSalida.js"></script>
 </head>
 
 <body>
@@ -34,30 +35,30 @@
 </script>
   <h2>Ingrese datos del vehiculo</h2>
 
-  <form id="encomienda-form">
+  <form id="llegadaSalida">
 
-    <label for="Ruta">Ruta:</label>
-    <input type="text" id="Ruta" name="Ruta" required>
+    <label for="Ruta">ID Ruta:</label>
+    <input type="number" id="ruta_id" name="Ruta" required>
 
-    <label for="Almacen">Almacén:</label>
-    <input type="text" id="Almacén" name="Almacén" required>
+    <label for="Almacen">ID Almacén:</label>
+    <input type="number" id="almacen_id" name="Almacén" required>
 
     <label for="ID Vehiculo">ID Vehiculo:</label>
-    <input type="number" id="ID Vehiculo" name="ID Vehiculo" required>
+    <input type="number" id="vehiculo_id" name="ID Vehiculo" required>
 
     <label for="Hora llegada">Hora llegada:</label>
-    <input type="text" id="Hora llegada" name="Hora llegada" required>
+    <input type="time" id="hora_llegada" name="Hora llegada" required>
 
     <label for="Hora salida">Hora salida:</label>
-    <input type="text" id="Hora salida" name="Hora salida" required>
+    <input type="time" id="hora_salida" name="Hora salida" required>
 
     <label for="fecha">Fecha:</label>
     <input type="date" id="fecha" name="fecha" required>
     
     <input type="submit" value="Enviar">
-</form>
+  </form>
 
-
+  <script src="/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 </body>
 
 </html>
