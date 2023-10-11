@@ -159,3 +159,29 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #0056b3;
 }
+
+@media screen and (max-width: 768px) {
+  .sidenav {
+    padding-top: 60px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+  .sidenav img {
+    width: 80px;
+    margin: 0 30px 15px 25px;
+  }
+  .sidenav .closebtn {
+    right: 15px;
+  }
+}
+
+/* Make the table responsive */
+@media screen and (max-width: 768px) {
+  table {
+    font-size: 14px;
+  }
+  th, td {
+    padding: 8px;
+  }
+}
