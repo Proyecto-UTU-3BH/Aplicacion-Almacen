@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="/Css/AsignarLote.css">
+    <script src="/JavaScript/cerrarSesion.js"></script>
+    <script src="/JavaScript/asignarLote.js"></script>
+</head>
+
+<body>
+    <div id="mySidenav" class="sidenav">
+        <img src="/Imagenes/LogoDelSistema.png" width="120" alt="LogoDelSistema">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/Html EN//Perfil.html">Perfil</a>
+        <a href="/Html EN/">Ver Paquetes</a>
+        <a href="/Html EN/">Ingresar Paquetes</a>
+        <a href="/Html EN//verLote.html">Ver Lote</a>
+        <a href="/Html EN//asignarLote.html">Asignar Lote</a>
+        <a href="/Html EN//llegadaSalida.html">Llegada y salida de camiones</a>
+        <a class="cerrarseison" href="#" id="logOut">Cerrar Sesion</a>
+
+        <div class="idioma-container">
+            <span class="idioma-label">Español</span>
+            <label class="switch">
+                <input type="checkbox" id="idiomaCheckbox">
+                <span class="slider round"></span>
+            </label>
+            <span class="idioma-label">Inglés</span>
+        </div>
+    </div>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+    <h2>Asignar Lote</h2>
+
+    <body>
+        <div class="container">
+            <form id="asignarLote">
+                <div class="form-group">
+                    <label for="id_lote">ID Lote:</label>
+                    <input type="number" id="id_lote" name="id_lote" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="id_producto">ID Producto:</label>
+                    <textarea id="producto_ids" name="producto_ids" required>
+Ingrese los ID de Producto separados por un Enter, ejemplo:
+1
+2
+3
+                </textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="id_vehiculo">ID Vehiculo:</label>
+                    <input type="number" id="id_vehiculo" name="id_vehiculo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="id_usuario">ID Usuario:</label>
+                    <input type="number" id="id_usuario" name="id_usuario" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Asignar">
+                </div>
+            </form>
+        </div>
+
+        <script src="/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    </body>
+
+</html>
