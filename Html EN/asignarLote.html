@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     <link rel="stylesheet" href="/Css/AsignarLote.css">
-    <script src="/JavaScript/cerrarSesion.js"></script>
+    <!--<script src="/JavaScript/cerrarSesion.js"></script>-->
     <script src="/JavaScript/asignarLote.js"></script>
 </head>
 
@@ -14,21 +14,21 @@
     <div id="mySidenav" class="sidenav">
         <img src="/Imagenes/LogoDelSistema.png" width="120" alt="LogoDelSistema">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="/Html EN//Perfil.html">Perfil</a>
-        <a href="/Html EN/">Ver Paquetes</a>
-        <a href="/Html EN/">Ingresar Paquetes</a>
-        <a href="/Html EN//verLote.html">Ver Lote</a>
-        <a href="/Html EN//asignarLote.html">Asignar Lote</a>
-        <a href="/Html EN//llegadaSalida.html">Llegada y salida de camiones</a>
-        <a class="cerrarseison" href="#" id="logOut">Cerrar Sesion</a>
+        <a href="/Html EN//Perfil.html">Profile</a>
+        <a href="/Html EN/">See Package</a>
+        <a href="/Html EN/">Enter Package</a>
+        <a href="/Html EN//verLote.html">See Batch</a>
+        <a href="/Html EN//asignarLote.html">Assign Batch</a>
+        <a href="/Html EN//llegadaSalida.html">Arrival and departure of vehicles</a>
+        <a class="cerrarseison" href="#" id="logOut">Sign off</a>
 
         <div class="idioma-container">
-            <span class="idioma-label">Español</span>
+            <span class="idioma-label">Spanish</span>
             <label class="switch">
                 <input type="checkbox" id="idiomaCheckbox">
                 <span class="slider round"></span>
             </label>
-            <span class="idioma-label">Inglés</span>
+            <span class="idioma-label">English</span>
         </div>
     </div>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
@@ -62,20 +62,20 @@
             checkbox.checked = false;
         }
     </script>
-    <h2>Asignar Lote</h2>
+    <h2>Assign Batch</h2>
 
     <body>
         <div class="container">
             <form id="asignarLote">
                 <div class="form-group">
-                    <label for="id_lote">ID Lote:</label>
+                    <label for="id_lote">Batch ID:</label>
                     <input type="number" id="id_lote" name="id_lote" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="id_producto">ID Producto:</label>
+                    <label for="id_producto">Product ID:</label>
                     <textarea id="producto_ids" name="producto_ids" required>
-Ingrese los ID de Producto separados por un Enter, ejemplo:
+Enter Product IDs separated by an Enter, for example:
 1
 2
 3
@@ -83,17 +83,17 @@ Ingrese los ID de Producto separados por un Enter, ejemplo:
                 </div>
 
                 <div class="form-group">
-                    <label for="id_vehiculo">ID Vehiculo:</label>
+                    <label for="id_vehiculo">Vehicle ID:</label>
                     <input type="number" id="id_vehiculo" name="id_vehiculo" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="id_usuario">ID Usuario:</label>
+                    <label for="id_usuario">User ID:</label>
                     <input type="number" id="id_usuario" name="id_usuario" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="fecha">Fecha:</label>
+                    <label for="fecha">Date:</label>
                     <input type="date" id="fecha" name="fecha" required>
                 </div>
 
