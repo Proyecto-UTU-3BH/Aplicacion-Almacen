@@ -6,28 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inicio</title>
   <link rel="stylesheet" href="/Css/Homepage.css">
-  <script src="/JavaScript/cerrarSesion.js"></script>
+  <!--<script src="/JavaScript/cerrarSesion.js"></script>-->
 </head>
 
 <body>
   <div id="mySidenav" class="sidenav">
     <img src="/Imagenes/LogoDelSistema.png" width="120" alt="LogoDelSistema">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="/Html EN//Perfil.html">Perfil</a>
-    <a href="/Html EN/">Ver Paquetes</a>
-    <a href="/Html EN/">Ingresar Paquetes</a>
-    <a href="/Html EN//verLote.html">Ver Lote</a>
-    <a href="/Html EN//asignarLote.html">Asignar Lote</a>
-    <a href="/Html EN//llegadaSalida.html">Llegada y salida de camiones</a>
-    <a class="cerrarseison" href="#" id="logOut">Cerrar Sesion</a>
+    <a href="/Html EN/perfil.html">Profile</a>
+    <a href="/Html EN/homepageAlmacen.html">See Package</a>
+    <a href="/Html EN/ingresarPaquete.html">Enter Package</a>
+    <a href="/Html EN/verLote.html">See Batch</a>
+    <a href="/Html EN/asignarLote.html">Assign Batch</a>
+    <a href="/Html EN/llegadaSalida.html">Arrival and departure of vehicles</a>
+    <a class="cerrarseison" href="#" id="logOut">Sign off</a>
 
     <div class="idioma-container">
-        <span class="idioma-label">Español</span>
+        <span class="idioma-label">Spanish</span>
         <label class="switch">
             <input type="checkbox" id="idiomaCheckbox">
             <span class="slider round"></span>
         </label>
-        <span class="idioma-label">Inglés</span>
+        <span class="idioma-label">English</span>
     </div>
 </div>
 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
@@ -61,14 +61,14 @@
             checkbox.checked = false;
         }
 </script>
-<h2>Listado de paquetes</h2>
+<h2>Package List</h2>
   <table class="default">
     <div class="Titulos">
       <tr>
-        <th>ID Lote</th>
-        <th>Destino</th>
-        <th>Ubicacion</th>
-        <th>Entregado</th>
+        <th>Batch ID</th>
+        <th>Destination</th>
+        <th>Location</th>
+        <th>Delivered</th>
       </tr>
     </div>
 
