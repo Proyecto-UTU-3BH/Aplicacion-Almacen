@@ -40,6 +40,27 @@
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
     }
+
+    
+    const checkbox = document.getElementById('idiomaCheckbox');
+
+        checkbox.addEventListener('change', function () {
+            if (checkbox.checked) {
+                localStorage.setItem('idioma', 'ingles');
+                window.location.href = '/HTML EN/verLote.html';
+            } else {
+                localStorage.setItem('idioma', 'espanol');
+                window.location.href = '/HTML/verLote.html';
+            }
+        });
+
+        const idiomaSeleccionado = localStorage.getItem('idioma');
+
+        if (idiomaSeleccionado === 'ingles') {
+            checkbox.checked = true;
+        } else {
+            checkbox.checked = false;
+        }
 </script>
 
   <h2>Lotes</h2>

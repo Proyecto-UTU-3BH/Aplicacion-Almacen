@@ -40,6 +40,26 @@
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
     }
+
+    const checkbox = document.getElementById('idiomaCheckbox');
+
+        checkbox.addEventListener('change', function () {
+            if (checkbox.checked) {
+                localStorage.setItem('idioma', 'ingles');
+                window.location.href = '/HTML EN/homepageAlmacen.html';
+            } else {
+                localStorage.setItem('idioma', 'espanol');
+                window.location.href = '/HTML/homepageAlmacen.html';
+            }
+        });
+
+        const idiomaSeleccionado = localStorage.getItem('idioma');
+
+        if (idiomaSeleccionado === 'ingles') {
+            checkbox.checked = true;
+        } else {
+            checkbox.checked = false;
+        }
 </script>
 <h2>Listado de paquetes</h2>
   <table class="default">

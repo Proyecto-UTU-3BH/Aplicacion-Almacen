@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inicio</title>
   <link rel="stylesheet" href="/Css/IngresarPaquete.css">
-  <script src="/JavaScript/cerrarSesion.js"></script>
+  <!--<script src="/JavaScript/cerrarSesion.js"></script>-->
   <script src="/JavaScript/ingresarPaquete.js"></script>
 </head>
 
@@ -23,26 +23,45 @@
     <a class="cerrarseison" href="#" id="logOut">Cerrar Sesion</a>
 
     <div class="idioma-container">
-        <span class="idioma-label">Español</span>
-        <label class="switch">
-            <input type="checkbox" id="idiomaCheckbox">
-            <span class="slider round"></span>
-        </label>
-        <span class="idioma-label">Inglés</span>
+      <span class="idioma-label">Español</span>
+      <label class="switch">
+        <input type="checkbox" id="idiomaCheckbox">
+        <span class="slider round"></span>
+      </label>
+      <span class="idioma-label">Inglés</span>
     </div>
-</div>
+  </div>
   <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 
   <script>
-      function openNav() {
-          document.getElementById("mySidenav").style.width = "250px";
-      }
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
 
-      function closeNav() {
-          document.getElementById("mySidenav").style.width = "0";
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+    const checkbox = document.getElementById('idiomaCheckbox');
+
+    checkbox.addEventListener('change', function () {
+      if (checkbox.checked) {
+        localStorage.setItem('idioma', 'ingles');
+        window.location.href = '/HTML EN/ingresarPaquete.html';
+      } else {
+        localStorage.setItem('idioma', 'espanol');
+        window.location.href = '/HTML/ingresarPaquete.html';
       }
+    });
+
+    const idiomaSeleccionado = localStorage.getItem('idioma');
+
+    if (idiomaSeleccionado === 'ingles') {
+      checkbox.checked = true;
+    } else {
+      checkbox.checked = false;
+    }
   </script>
-  <h2>Ingrese datos del paquete</h2>
+  <h2>Enter Package Data Sender:</h2>
 
   <form id="ingresarPaquete">
 
@@ -60,15 +79,15 @@
 
     <label for="FormadeEntrega">Forma de Entrega:</label>
     <select id="FormaDeEntrega" name="FormadeEntrega" required>
-        <option value="reparto">Entrega a domicilio</option>
-        <option value="pick up">Pick Up</option>
+      <option value="reparto">Entrega a domicilio</option>
+      <option value="pick up">Pick Up</option>
     </select>
 
     <label for="Calle">Calle:</label>
-    <input type="text" id="Calle" name="Calle" >
+    <input type="text" id="Calle" name="Calle">
 
     <label for="NumeroPuerta">Número de Puerta:</label>
-    <input type="text" id="NumeroPuerta" name="NumeroPuerta" >
+    <input type="text" id="NumeroPuerta" name="NumeroPuerta">
 
     <label for="Tipo">Tipo de Encomienda:</label>
     <select id="Tipo" name="Tipo" required>
@@ -79,23 +98,23 @@
       <option value="Paquete mediano">Paquete Mediano</option>
       <option value="Paquete grande">Paquete Grande</option>
       <option value="Otro">Otro</option>
-  </select>
+    </select>
 
     <input type="submit" value="Ingresar">
   </form>
 
   <form id="almacenamiento">
-        <label for="id_lote">ID Almacen:</label>
-        <input type="text" id="id_almacen" name="id_almacen" required>
+    <label for="id_lote">ID Almacen:</label>
+    <input type="text" id="id_almacen" name="id_almacen" required>
 
-        <label for="id_producto">ID Producto:</label>
-        <input type="text" id="id_producto" name="id_producto" required>
+    <label for="id_producto">ID Producto:</label>
+    <input type="text" id="id_producto" name="id_producto" required>
 
-        <input type="submit" value="Almacenar">
+    <input type="submit" value="Almacenar">
 
   </form>
 
-  <script src="/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script> 
+  <script src="/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 
 </body>
 
