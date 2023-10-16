@@ -1,30 +1,84 @@
+function mostrarProductos(data) {
+    
+    const tbody = document.querySelector("table tbody");
+
+    
+    tbody.innerHTML = '';
+
+    data.forEach(producto => {
+        
+        const row = document.createElement("tr");
+        
+        
+        const valores = [
+            producto.id,
+            producto.destino,
+            producto.estado,
+            producto.tipo,
+            producto.remitente,
+            producto.nombre_destinatario,
+            producto.calle,
+            producto.numero_puerta,
+            producto.forma_entrega,
+            producto.peso
+        ];
+
+        
+        valores.forEach(valor => {
+            const cell = document.createElement("td");
+            cell.textContent = valor;
+            row.appendChild(cell);
+        });
+
+        
+        const modificarCell = document.createElement("td");
+        const modificarButton = document.createElement("button");
+        modificarButton.textContent = "Modificar";
+        modificarButton.addEventListener("click", () => {
+            
+        });
+        modificarCell.appendChild(modificarButton);
+        row.appendChild(modificarCell);
+
+        
+        const eliminarCell = document.createElement("td");
+        const eliminarForm = document.createElement("form");
+        eliminarForm.action = "#"; 
+        const eliminarButton = document.createElement("button");
+        eliminarButton.type = "submit";
+        eliminarButton.textContent = "Eliminar";
+        eliminarForm.appendChild(eliminarButton);
+        eliminarCell.appendChild(eliminarForm);
+        row.appendChild(eliminarCell);
+
+        
+        tbody.appendChild(row);
+    });
+}
 
 
 
 document.addEventListener("DOMContentLoaded", function () {
-
     let idUsuario;
-    
     const token = localStorage.getItem("access_token");
-  
     const urlValidar = "http://localhost:8000/api/validate";
-  
     const headers = {
-      "Authorization": "Bearer " + token,
+        "Authorization": "Bearer " + token,
     };
-  
+
+    // Primera solicitud
     fetch(urlValidar, {
-      method: "GET",
-      headers: headers,
+        method: "GET",
+        headers: headers,
     })
-      .then(response => {
+    .then(response => {
         if (response.ok) {
-          return response.json(); 
+            return response.json(); 
         } else {
-          throw new Error("Error en la solicitud");
+            throw new Error("Error en la solicitud");
         }
-      })
-      .then(data => {
+    })
+    .then(data => {
         const userData = {
             primer_nombre: data.primer_nombre,
             primer_apellido: data.primer_apellido,
@@ -36,15 +90,29 @@ document.addEventListener("DOMContentLoaded", function () {
             ci: data.ci,
             numero_de_puerta: data.numero_de_puerta
         };
-        
+
         sessionStorage.setItem("userData", JSON.stringify(userData));
 
-        idUsuario=data.usuario;
-      })
-      .catch(error => {
-        console.error("Error:", error);
-      });
+        idUsuario = data.id;
 
+        const urlProductos = "http://localhost:8001/api/usuarios/almacen/productos/"+idUsuario;
+        return fetch(urlProductos, {
+            method: "GET",
+            headers: headers,
+        });
+    })
+    .then(async response => {
+        if (response.ok) {
+            return response.json();
+        } 
+    })
+    .then(data => {
+        mostrarProductos(data);
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });
 });
+
 
 
