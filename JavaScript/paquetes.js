@@ -1,59 +1,35 @@
 function mostrarProductos(data) {
     
-    const tbody = document.querySelector("table tbody");
+    const tbody = document.getElementById("productos");
 
-    
-    tbody.innerHTML = '';
+    let htmlToAppend = '';
 
     data.forEach(producto => {
-        
-        const row = document.createElement("tr");
-        
-        
-        const valores = [
-            producto.id,
-            producto.destino,
-            producto.estado,
-            producto.tipo,
-            producto.remitente,
-            producto.nombre_destinatario,
-            producto.calle,
-            producto.numero_puerta,
-            producto.forma_entrega,
-            producto.peso
-        ];
-
-        
-        valores.forEach(valor => {
-            const cell = document.createElement("td");
-            cell.textContent = valor;
-            row.appendChild(cell);
-        });
-
-        
-        const modificarCell = document.createElement("td");
-        const modificarButton = document.createElement("button");
-        modificarButton.textContent = "Modificar";
-        modificarButton.addEventListener("click", () => {
-            
-        });
-        modificarCell.appendChild(modificarButton);
-        row.appendChild(modificarCell);
-
-        
-        const eliminarCell = document.createElement("td");
-        const eliminarForm = document.createElement("form");
-        eliminarForm.action = "#"; 
-        const eliminarButton = document.createElement("button");
-        eliminarButton.type = "submit";
-        eliminarButton.textContent = "Eliminar";
-        eliminarForm.appendChild(eliminarButton);
-        eliminarCell.appendChild(eliminarForm);
-        row.appendChild(eliminarCell);
-
-        
-        tbody.appendChild(row);
+        htmlToAppend += `
+            <tr>
+                <td>${producto.id}</td>
+                <td>${producto.destino}</td>
+                <td>${producto.estado}</td>
+                <td>${producto.tipo}</td>
+                <td>${producto.remitente}</td>
+                <td>${producto.nombre_destinatario}</td>
+                <td>${producto.calle}</td>
+                <td>${producto.numero_puerta}</td>
+                <td>${producto.forma_entrega}</td>
+                <td>${producto.peso}</td>
+                <td class="modificar">
+                    <a href="#"><button class="btnModificar">Modificar</button></a>
+                </td>
+                <td class="eliminar">
+                    <form action="#" method="POST">
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        `;
     });
+
+    tbody.innerHTML = htmlToAppend;
 }
 
 
@@ -66,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
         "Authorization": "Bearer " + token,
     };
 
-    // Primera solicitud
     fetch(urlValidar, {
         method: "GET",
         headers: headers,
