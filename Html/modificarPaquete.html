@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ingresar Paquete</title>
+  <title>Modificar Paquete</title>
   <link rel="stylesheet" href="/Css/IngresarPaquete.css">
   <script src="/JavaScript/cerrarSesion.js"></script>
-  <script src="/JavaScript/ingresarPaquete.js"></script>
+  <script src="/JavaScript/modificarPaquete.js"></script>
 </head>
 
 <body>
@@ -62,7 +62,8 @@
       checkbox.checked = false;
     }
   </script>
-  <h2>Ingrese datos del paquete</h2>
+
+  <h2>Modifique datos del Paquete</h2>
 
   <form id="ingresarPaquete">
 
@@ -102,17 +103,6 @@
     </select>
 
     <input type="submit" value="Ingresar">
-  </form>
-
-  <form id="almacenamiento">
-    <label for="id_lote">ID Almacen:</label>
-    <input type="text" id="id_almacen" name="id_almacen" required>
-
-    <label for="id_producto">ID Producto:</label>
-    <input type="text" id="id_producto" name="id_producto" required>
-
-    <input type="submit" value="Almacenar">
-
   </form>
 
   <script src="/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>

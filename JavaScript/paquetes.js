@@ -18,7 +18,7 @@ function mostrarProductos(data) {
                 <td>${producto.forma_entrega}</td>
                 <td>${producto.peso}</td>
                 <td class="modificar">
-                    <a href="#"><button class="btnModificar">Modificar</button></a>
+                    <button class="btnModificar" onclick="setCatID(${producto.id})">Modificar</button>
                 </td>
                 <td class="eliminar">
                     <form action="#" method="POST">
@@ -30,6 +30,11 @@ function mostrarProductos(data) {
     });
 
     tbody.innerHTML = htmlToAppend;
+}
+
+function setCatID(id) {
+    sessionStorage.setItem("idProducto", id);
+    location.href = "modificarPaquete.html";
 }
 
 
