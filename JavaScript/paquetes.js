@@ -21,16 +21,72 @@ function mostrarProductos(data) {
                     <button class="btnModificar" onclick="setCatID(${producto.id})">Modificar</button>
                 </td>
                 <td class="eliminar">
-                    <form action="#" method="POST">
-                        <button type="submit">Eliminar</button>
-                    </form>
+                    <button type="submit" class="eliminar-btn" data-producto-id="${producto.id}">Eliminar</button>
                 </td>
             </tr>
         `;
     });
 
     tbody.innerHTML = htmlToAppend;
+
+    preguntarConfirmacion();
+
 }
+
+function preguntarConfirmacion() {
+
+    document.querySelectorAll(".eliminar-btn").forEach(function (boton) {
+        boton.addEventListener("click", function () {
+            const idProducto = boton.getAttribute("data-producto-id");
+            Swal.fire({
+                title: "Confirmación de Eliminación",
+                text: "¿Estás seguro de que deseas eliminar este producto?",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6",
+                confirmButtonText: "Sí, eliminar",
+                cancelButtonText: "Cancelar"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    eliminarProducto(idProducto)
+                }
+            });
+        });
+    });
+
+}
+
+function eliminarProducto(idProducto){
+    const token = localStorage.getItem("access_token");
+    const urlEliminarProducto = "http://localhost:8001/api/productos/"+idProducto;
+    const headers = {
+        "Authorization": "Bearer " + token,
+    };
+
+    fetch(urlEliminarProducto, {
+        method: "DELETE",
+        headers: headers,
+    })
+    .then(async response => {
+      if (response.ok) {
+        Swal.fire({
+            icon: 'success',
+            title: 'Producto Eliminado',
+            text: 'El producto se ha eliminado correctamente.'
+        }).then(() => {
+            location.reload();
+        });
+      } else {
+        const errorMessage = await response.text(); 
+        console.error("Error en la solicitud:", errorMessage);
+      }
+    })
+    .catch(error => {
+      console.error("Error:", error);
+    });
+};
+
 
 function setCatID(id) {
     sessionStorage.setItem("idProducto", id);
@@ -92,6 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch(error => {
         console.error("Error:", error);
     });
+    
 });
 
 

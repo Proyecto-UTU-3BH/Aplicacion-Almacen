@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
             .then((userData) => {
                 if (userData.tipo != "funcionario") {
                     localStorage.removeItem("access_token");
+                    sessionStorage.removeItem("userData");
+                    localStorage.removeItem("idProducto");
                     location.href = "index.html";
                 } 
             })
