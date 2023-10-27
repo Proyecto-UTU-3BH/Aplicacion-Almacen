@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("apellido1").value = userData.primer_apellido;
     document.getElementById("apellido2").value = userData.segundo_apellido;
     document.getElementById("email").value = userData.usuario;
+    document.getElementById("tel").value = userData.telefono;
 
     document.getElementById('imagen_perfil').addEventListener('change', function () {
      
@@ -30,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let primer_apellido= document.getElementById("apellido1").value;
         let segundo_apellido= document.getElementById("apellido2").value;
         let password= document.getElementById("password").value;
+        let telefono= document.getElementById("tel").value;
         
         let info= {
             "usuario": usuario,
@@ -41,6 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
             "segundo_apellido": segundo_apellido,
             "calle": userData.calle,
             "numero_de_puerta": userData.numero_de_puerta,
+            "telefono": telefono,
+            "almacen_id": userData.almacen_id,
         };
 
         const token = localStorage.getItem("access_token");
@@ -57,6 +61,8 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(async response => {
           if (response.ok) {
             console.log("Usuario modificado con éxito.");
+            userData.telefono = telefono;
+            sessionStorage.setItem("userData", JSON.stringify(userData));
             location.reload();
           } else {
             const errorMessage = await response.text(); 

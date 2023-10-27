@@ -124,7 +124,9 @@ document.addEventListener("DOMContentLoaded", function () {
             tipo: data.tipo,
             calle: data.calle,
             ci: data.ci,
-            numero_de_puerta: data.numero_de_puerta
+            numero_de_puerta: data.numero_de_puerta,
+            telefono: data.telefono,
+            almacen_id: data.almacen_id
         };
 
         sessionStorage.setItem("userData", JSON.stringify(userData));
