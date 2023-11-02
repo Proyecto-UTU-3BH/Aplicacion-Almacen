@@ -71,7 +71,7 @@
 
     <h2>Listado de paquetes</h2>
 
-    <div class="container">
+    <div class="container" id="container">
       <div class="insertar">
         <a href="/Html/ingresarPaquete.html"><button>Ingresar Paquete</button></a>
       </div>
@@ -92,10 +92,15 @@
             <th class="eliminar"></th>
           </tr>
         </thead>
-        <tbody id="productos"></tbody>
+        <tbody id="productos">
+        </tbody>
       </table>
     </div>
 
+    <div class="centrar-loader">
+      <div class="loader"></div>
+    </div>
+    
     <script src="/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
     
   </body>

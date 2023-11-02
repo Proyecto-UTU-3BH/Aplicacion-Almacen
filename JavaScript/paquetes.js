@@ -96,6 +96,13 @@ function setCatID(id) {
 
 
 document.addEventListener("DOMContentLoaded", function () {
+
+    const loader = document.querySelector(".loader");
+    const productosContainer = document.getElementById("container");
+
+    loader.style.display = "block";
+    productosContainer.style.display = "none";
+
     let idUsuario;
     const token = localStorage.getItem("access_token");
     const urlValidar = "http://localhost:8000/api/validate";
@@ -145,6 +152,9 @@ document.addEventListener("DOMContentLoaded", function () {
         } 
     })
     .then(data => {
+        loader.style.display = "none";
+        productosContainer.style.display = "block";
+
         mostrarProductos(data);
     })
     .catch(error => {
