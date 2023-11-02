@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inicio</title>
   <link rel="stylesheet" href="/Css/Homepage.css">
-  <!--<script src="/JavaScript/cerrarSesion.js"></script>-->
+  <script src="/JavaScript/cerrarSesion.js"></script>
+
+
 </head>
 
 <body>
@@ -22,84 +24,74 @@
     <a class="cerrarseison" href="#" id="logOut">Sign off</a>
 
     <div class="idioma-container">
-        <span class="idioma-label">Spanish</span>
-        <label class="switch">
-            <input type="checkbox" id="idiomaCheckbox">
-            <span class="slider round"></span>
-        </label>
-        <span class="idioma-label">English</span>
+      <span class="idioma-label">Spanish</span>
+      <label class="switch">
+        <input type="checkbox" id="idiomaCheckbox">
+        <span class="slider round"></span>
+      </label>
+      <span class="idioma-label">English</span>
     </div>
-</div>
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+  </div>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 
-<script>
+  <script>
     function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("mySidenav").style.width = "250px";
     }
 
     function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("mySidenav").style.width = "0";
     }
 
     const checkbox = document.getElementById('idiomaCheckbox');
 
-        checkbox.addEventListener('change', function () {
-            if (checkbox.checked) {
-                localStorage.setItem('idioma', 'ingles');
-                window.location.href = '/HTML EN/homepageAlmacen.html';
-            } else {
-                localStorage.setItem('idioma', 'espanol');
-                window.location.href = '/HTML/homepageAlmacen.html';
-            }
-        });
+    checkbox.addEventListener('change', function () {
+      if (checkbox.checked) {
+        localStorage.setItem('idioma', 'ingles');
+        window.location.href = '/HTML EN/homepageAlmacen.html';
+      } else {
+        localStorage.setItem('idioma', 'espanol');
+        window.location.href = '/HTML/homepageAlmacen.html';
+      }
+    });
 
-        const idiomaSeleccionado = localStorage.getItem('idioma');
+    const idiomaSeleccionado = localStorage.getItem('idioma');
 
-        if (idiomaSeleccionado === 'ingles') {
-            checkbox.checked = true;
-        } else {
-            checkbox.checked = false;
-        }
-</script>
-<h2>Package List</h2>
-  <table class="default">
-    <div class="Titulos">
-      <tr>
-        <th>Batch ID</th>
-        <th>Destination</th>
-        <th>Location</th>
-        <th>Delivered</th>
-      </tr>
+    if (idiomaSeleccionado === 'ingles') {
+      checkbox.checked = true;
+    } else {
+      checkbox.checked = false;
+    }
+  </script>
+
+  <h2>Package List</h2>
+
+  <div class="container">
+    <div class="insertar">
+      <a href="/Html EN/ingresarPaquete.html"><button>Enter package</button></a>
     </div>
-
-
-    <tr>
-      <td>1</td>
-      <td>Montevideo</td>
-      <td>En transito</td>
-      <td>No</td>
-    </tr>
-
-    <tr>
-      <td>1</td>
-      <td>Montevideo</td>
-      <td>En transito</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>Montevideo</td>
-      <td>En transito</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>Montevideo</td>
-      <td>En transito</td>
-      <td>No</td>
-    </tr>
-  </table>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Destinatino</th>
+          <th>Status</th>
+          <th>Type</th>
+          <th>Sender</th>
+          <th>Addressee</th>
+          <th>Street</th>
+          <th>Door N°</th>
+          <th>Delivery Method</th>
+          <th>Weight</th>
+          <th class="modificar"></th>
+          <th class="eliminar"></th>
+        </tr>
+      </thead>
+      <tbody id="productos"></tbody>
+    </table>
   </div>
+
+  <script src="/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 
 </body>
 
