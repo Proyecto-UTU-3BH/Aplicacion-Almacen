@@ -7,8 +7,7 @@
   <title>Inicio</title>
   <link rel="stylesheet" href="/Css/Homepage.css">
   <script src="/JavaScript/cerrarSesion.js"></script>
-
-
+  <script src="/JavaScript/paquetes.js"></script>
 </head>
 
 <body>
@@ -66,7 +65,7 @@
 
   <h2>Package List</h2>
 
-  <div class="container">
+  <div class="container" id="container">
     <div class="insertar">
       <a href="/Html EN/ingresarPaquete.html"><button>Enter package</button></a>
     </div>
@@ -89,6 +88,10 @@
       </thead>
       <tbody id="productos"></tbody>
     </table>
+  </div>
+
+  <div class="centrar-loader">
+    <div class="loader"></div>
   </div>
 
   <script src="/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
