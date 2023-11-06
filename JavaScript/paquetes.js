@@ -8,6 +8,7 @@ function mostrarProductos(data) {
         htmlToAppend += `
             <tr>
                 <td>${producto.id}</td>
+                <td>${producto.codRastreo}</td>
                 <td>${producto.destino}</td>
                 <td>${producto.estado}</td>
                 <td>${producto.tipo}</td>

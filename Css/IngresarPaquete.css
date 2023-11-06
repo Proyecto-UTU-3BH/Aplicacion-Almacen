@@ -136,7 +136,7 @@ input[type="submit"]:hover {
   align-items: center; 
 }
 
-#redirigirButton {
+#generarCodigo,#verProductos,#redirigirButton {
   background-color: #28A745;;
   color: #fff;
   padding: 10px 20px;
@@ -146,7 +146,7 @@ input[type="submit"]:hover {
   font-weight: bold;
 }
 
-#redirigirButton:hover {
+#generarCodigo:hover,#verProductos:hover,#redirigirButton:hover {
   background-color: #1E7E34;
 }
 

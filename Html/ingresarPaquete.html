@@ -101,7 +101,14 @@
       <option value="Otro">Otro</option>
     </select>
 
-    <input type="submit" value="Ingresar">
+    <label for="codRastreo">Código Rastreo:</label>
+    <input type="text" id="codRastreo" name="codRastreo" readonly required>
+
+    <div class="button-container">
+      <input type="submit" value="Ingresar">
+      <button type="button" id="generarCodigo">Generar Codigo</button> 
+    </div>
+    
   </form>
 
   <form id="almacenamiento">
@@ -111,7 +118,10 @@
     <label for="id_producto">ID Producto:</label>
     <input type="text" id="id_producto" name="id_producto" required>
 
-    <input type="submit" value="Almacenar">
+    <div class="button-container">
+      <input type="submit" value="Almacenar">
+      <button type="button" id="verProductos">Ver Productos</button> 
+    </div>
 
   </form>
 

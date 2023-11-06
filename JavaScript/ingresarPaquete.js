@@ -1,3 +1,13 @@
+function generarCodigoAleatorio(largo) {
+  const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  let codigo = '';
+  for (let i = 0; i < largo; i++) {
+      const randomIndex = Math.floor(Math.random() * caracteres.length);
+      codigo += caracteres[randomIndex];
+  }
+  return codigo;
+}
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const token = localStorage.getItem("access_token");
@@ -14,6 +24,14 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('id_producto').value=sessionStorage.getItem("productoId");
     }
 
+    const codigoRastreoInput = document.getElementById('codRastreo');
+    const generarCodigoButton = document.getElementById('generarCodigo');
+
+    generarCodigoButton.addEventListener('click', function () {
+      const codRastreo = generarCodigoAleatorio(6); 
+      codigoRastreoInput.value = codRastreo;
+    });
+
     const formularioPaquete = document.getElementById("ingresarPaquete");
     const formularioAlmacenamiento = document.getElementById("almacenamiento");
     const calle = document.getElementById("Calle");
@@ -28,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let peso= document.getElementById("Peso").value;
         let destino= document.getElementById("Destino").value;
         let tipo = document.getElementById("Tipo").value;
+        let codRastreo= document.getElementById("codRastreo").value;
         let estado="en central";
 
         if (forma_entrega.value === "reparto") {
@@ -51,7 +70,8 @@ document.addEventListener("DOMContentLoaded", function () {
             "calle": calle.value,
             "numero_puerta": numero_puerta.value,
             "forma_entrega": forma_entrega.value,
-            "estado": estado
+            "estado": estado,
+            "codRastreo": codRastreo
         };
 
         fetch(urlIngresarPaquete, {
@@ -65,9 +85,16 @@ document.addEventListener("DOMContentLoaded", function () {
             sessionStorage.setItem("productoId", data.id);
             location.reload();
           } else {
-            const errorMessage = await response.text(); 
-            console.error("Error en la solicitud:", errorMessage);
+            const errorData = await response.json();
+             if (errorData.codRastreo && errorData.codRastreo[0] === "The cod rastreo has already been taken.") {
+            Swal.fire({
+                title: 'Código de Rastreo Duplicado',
+                text: 'El código de rastreo ya existe. Por favor, genera otro código de rastreo.',
+                icon: 'warning',
+                confirmButtonText: 'OK'
+            });
           }
+        }
         })
         .catch(error => {
           console.error("Error:", error);
@@ -102,6 +129,10 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch(error => {
           console.error("Error:", error);
         });
+    });
+
+    document.getElementById('verProductos').addEventListener('click', function () {
+      window.location.href = 'homepageAlmacen.html';
     });
     
 
