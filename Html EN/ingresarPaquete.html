@@ -15,23 +15,23 @@
     <img src="/Imagenes/LogoDelSistema.png" width="120" alt="LogoDelSistema">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="/Html EN/perfil.html">Profile</a>
-    <a href="/Html EN/homepageAlmacen.html">See Package</a>
+    <a href="/Html EN/homepageAlmacen.html">See Packages</a>
     <a href="/Html EN/ingresarPaquete.html">Enter Package</a>
-    <a href="/Html EN/verLote.html">See Batch</a>
+    <a href="/Html EN/verLote.html">See Batches</a>
     <a href="/Html EN/asignarLote.html">Assign Batch</a>
     <a href="/Html EN/llegadaSalida.html">Arrival and departure of vehicles</a>
     <a class="cerrarseison" href="#" id="logOut">Sign off</a>
 
     <div class="idioma-container">
-        <span class="idioma-label">Spanish</span>
-        <label class="switch">
-            <input type="checkbox" id="idiomaCheckbox">
-            <span class="slider round"></span>
-        </label>
-        <span class="idioma-label">English</span>
+      <span class="idioma-label">Spanish</span>
+      <label class="switch">
+        <input type="checkbox" id="idiomaCheckbox">
+        <span class="slider round"></span>
+      </label>
+      <span class="idioma-label">English</span>
     </div>
-</div>
-</div>
+  </div>
+  </div>
   <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 
   <script>
@@ -101,7 +101,13 @@
       <option value="Otro">Other</option>
     </select>
 
-    <input type="submit" value="Insert">
+    <label for="codRastreo">Código Rastreo:</label>
+    <input type="text" id="codRastreo" name="codRastreo" readonly required>
+
+    <div class="button-container">
+      <input type="submit" value="Insert">
+      <button type="button" id="generarCodigo">Generate Code</button> 
+    </div>
   </form>
 
   <form id="almacenamiento">
@@ -111,7 +117,10 @@
     <label for="id_producto">Product ID:</label>
     <input type="text" id="id_producto" name="id_producto" required>
 
-    <input type="submit" value="Store">
+    <div class="button-container">
+      <input type="submit" value="Store">
+      <button type="button" id="verProductos">See Packages</button> 
+    </div>
 
   </form>
 
