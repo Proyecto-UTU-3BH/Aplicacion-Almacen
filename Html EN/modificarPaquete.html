@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicio</title>
+  <title>Modify Package</title>
   <link rel="stylesheet" href="/Css/IngresarPaquete.css">
   <script src="/JavaScript/cerrarSesion.js"></script>
-  <script src="/JavaScript/ingresarPaquete.js"></script>
+  <script src="/JavaScript/modificarPaquete.js"></script>
 </head>
 
 <body>
@@ -42,6 +42,7 @@
     function closeNav() {
       document.getElementById("mySidenav").style.width = "0";
     }
+
     const checkbox = document.getElementById('idiomaCheckbox');
 
     checkbox.addEventListener('change', function () {
@@ -62,9 +63,10 @@
       checkbox.checked = false;
     }
   </script>
-  <h2>Enter Package Data Sender:</h2>
 
-  <form id="ingresarPaquete">
+  <h2>Modify Package Data</h2>
+
+  <form id="modificarPaquete">
 
     <label for="Remitente">Sender:</label>
     <input type="text" id="Remitente" name="Remitente" required>
@@ -72,14 +74,22 @@
     <label for="NombreDestinatario">Recipient's Name:</label>
     <input type="text" id="NombreDestinatario" name="NombreDestinatario" required>
 
-    <label for="Peso">Weight (Kg):</label>
+    <label for="Estado">Status:</label>
+    <select id="Estado" name="Estado" required>
+      <option value="en central">At Central</option>
+      <option value="en transito">In Transit</option>
+      <option value="almacen final">Final Warehouse</option>
+      <option value="en domicilio">At Home</option>
+    </select>
+
+    <label for="Peso">Weight (kg):</label>
     <input type="number" id="Peso" name="Peso" step="0.01" required>
 
     <label for="Destino">Destination:</label>
     <input type="text" id="Destino" name="Destino" required>
 
-    <label for="FormadeEntrega">Delivery Method:</label>
-    <select id="FormaDeEntrega" name="FormadeEntrega" required>
+    <label for="FormaDeEntrega">Delivery Method:</label>
+    <select id="FormaDeEntrega" name="FormaDeEntrega" required>
       <option value="reparto">Home Delivery</option>
       <option value="pick up">Pick Up</option>
     </select>
@@ -87,45 +97,24 @@
     <label for="Calle">Street:</label>
     <input type="text" id="Calle" name="Calle">
 
-    <label for="NumeroPuerta">Gate Number:</label>
+    <label for="NumeroPuerta">Door Number:</label>
     <input type="text" id="NumeroPuerta" name="NumeroPuerta">
 
     <label for="Tipo">Package Type:</label>
     <select id="Tipo" name="Tipo" required>
       <option value="Carta">Letter</option>
-      <option value="Sobre chico">Small Envelop</option>
-      <option value="Sobre grande">Big Envelop</option>
+      <option value="Sobre chico">Small Letter</option>
+      <option value="Sobre grande">Big Letter</option>
       <option value="Paquete chico">Small Package</option>
       <option value="Paquete mediano">Medium Package</option>
       <option value="Paquete grande">Big Package</option>
       <option value="Otro">Other</option>
     </select>
 
-    <label for="codRastreo">Código Rastreo:</label>
-    <input type="text" id="codRastreo" name="codRastreo" readonly required>
-
     <div class="button-container">
-      <input type="submit" value="Insert">
-      <button type="button" id="generarCodigo">Generate Code</button>
+      <input type="submit" value="Modify">
+      <button id="redirigirButton">View Packages</button>
     </div>
-  </form>
-
-  <form id="almacenamiento">
-    <label for="id_lote">Warehouse ID:</label>
-    <input type="text" id="id_almacen" name="id_almacen" required>
-
-    <label for="id_producto">Product ID:</label>
-    <input type="text" id="id_producto" name="id_producto" required>
-
-    <div class="button-container">
-      <input type="submit" value="Store">
-      <button type="button" id="verProductos">See Packages</button>
-    </div>
-
   </form>
 
   <script src="/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
-
-</body>
-
-</html>
