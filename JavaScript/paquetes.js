@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
             almacen_id: data.almacen_id
         };
 
-        sessionStorage.setItem("userData", JSON.stringify(userData));
+        localStorage.setItem("userData", JSON.stringify(userData));
 
         idUsuario = data.id;
 
