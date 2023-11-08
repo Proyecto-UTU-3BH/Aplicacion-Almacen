@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #d2ecf9;
+  background-color: #d2ecf9 !important;
   margin: 0;
   padding: 0;
 }
@@ -72,7 +72,7 @@ body {
   padding: 15px;
 }
 
-.container {
+#container {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
@@ -80,6 +80,7 @@ body {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: #fff;
+  margin-bottom: 20px;
 }
 
 .form-group {
@@ -106,27 +107,60 @@ textarea {
   height: 250px;
 }
 
-input[type="submit"] {
+#asignar, #modal {
   background-color: #007BFF;
   color: #fff;
-  padding: 10px 20px;
+  padding: 7px 17px;
   border: none;
   border-radius: 3px;
   cursor: pointer;
+  font-family: sans-serif !important;
   font-weight: bold;
+  font-size: 14px;
 }
 
-input[type="submit"]:hover {
+#asignar:hover, #modal:hover {
   background-color: #0056b3;
 }
 
-h2 {
+#modal {
+  background-color: #28A745;
+  color: #fff;
+  padding: 7px 17px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: sans-serif !important;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#modal:hover {
+  background-color: #1E7E34;
+}
+
+button.close {
+  color: blue; /* Cambia el color del icono de cierre */
+}
+
+/* Cambiar el fondo del botón de cierre a un tono más claro de azul */
+button.close:hover {
+  background-color: lightblue;
+}
+
+#encabezado {
   text-transform: capitalize;
   font-size: 30px;
   margin-bottom: 19px;
   margin-top: 19px;
   text-align: center;
   color: #000;
+  font-weight: bold;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 .idioma-container {

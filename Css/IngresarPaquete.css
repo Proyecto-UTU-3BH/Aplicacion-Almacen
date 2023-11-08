@@ -133,7 +133,7 @@ input[type="submit"]:hover {
 }
 
 #generarCodigo,#verProductos,#redirigirButton {
-  background-color: #28A745;;
+  background-color: #28A745;
   color: #fff;
   padding: 10px 20px;
   border: none;

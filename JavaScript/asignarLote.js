@@ -1,3 +1,46 @@
+function mostrarVehiculos (data) {
+
+  const tbody = document.getElementById("vehiculos");
+
+  let htmlToAppend = '';
+
+  data.forEach(vehiculo => {
+      htmlToAppend += `
+          <tr>
+              <td>${vehiculo.id}</td>
+              <td>${vehiculo.matricula.toUpperCase()}</td>
+              <td>${vehiculo.capacidad}</td>
+              <td>${vehiculo.estado}</td>
+              <td>
+                  <button class="btn btn-primary" data-id="${vehiculo.id}">Seleccionar</button>
+              </td>
+          </tr>
+      `;
+  });
+
+  tbody.innerHTML = htmlToAppend;
+
+  eventoBotones();
+
+}
+
+function eventoBotones(){
+
+  const inputIdVehiculo = document.getElementById("id_vehiculo");
+
+  const botones = document.querySelectorAll("button[data-id]");
+    botones.forEach(boton => {
+        boton.addEventListener("click", function () {
+            const idVehiculo = this.getAttribute("data-id");
+            inputIdVehiculo.value = idVehiculo;
+
+            var modalVehiculos = document.querySelector('#miModal')
+            var modal = bootstrap.Modal.getOrCreateInstance(modalVehiculos)
+            modal.hide();
+        });
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
 
     const token = localStorage.getItem("access_token");
@@ -68,5 +111,31 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(error => {
           console.error("Error:", error);
         });
+    });
+
+    document.getElementById('modal').addEventListener('click', function () {
+
+      const urlVerVehiculos = "http://localhost:8001/api/vehiculos";
+
+      fetch(urlVerVehiculos, {
+        method: "GET",
+        headers: headers,
+      })
+        .then(async (response) => {
+          if (response.ok) {
+            return response.json(); 
+          } else {
+            const errorMessage = await response.text();
+            console.error("Error en la solicitud:", errorMessage);
+            throw new Error("Error en la solicitud");
+          }
+        })
+        .then((data) => {
+          mostrarVehiculos(data);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+
     });
 });

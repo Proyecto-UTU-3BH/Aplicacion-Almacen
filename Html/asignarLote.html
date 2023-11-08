@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/Css/AsignarLote.css">
     <script src="/JavaScript/cerrarSesion.js"></script>
     <script src="/JavaScript/asignarLote.js"></script>
+    <link rel="stylesheet" href="/Css/bootstrap.min.css">
 </head>
 
 <body>
@@ -62,10 +63,10 @@
             checkbox.checked = false;
         }
     </script>
-    <h2>Asignar Lote</h2>
+    <h2 id="encabezado">Asignar Lote</h2>
 
     <body>
-        <div class="container">
+        <div id="container">
             <form id="asignarLote">
                 <div class="form-group">
                     <label for="id_lote">ID Lote:</label>
@@ -97,13 +98,49 @@ Ingrese los ID de Producto separados por un Enter, ejemplo:
                     <input type="date" id="fecha" name="fecha" required>
                 </div>
 
-                <div class="form-group">
-                    <input type="submit" value="Asignar">
+                <div class="btn-container">
+                    <input type="submit" id="asignar" value="Asignar">
+                    <button type="button" id="modal" data-bs-toggle="modal" data-bs-target="#miModal">
+                        Ver Vehiculos
+                    </button>
                 </div>
             </form>
         </div>
 
+        <div class="modal fade" id="miModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalLabel">Listado Vehiculos</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Matrícula</th>
+                                    <th>Capacidad</th>
+                                    <th>Estado</th>
+                                    <th>Seleccionar</th>
+                                </tr>
+                            </thead>
+                            <tbody id="vehiculos">
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
         <script src="/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+        <script src="/JavaScript/bootstrap.bundle.min.js"></script>
+
     </body>
 
 </html>
