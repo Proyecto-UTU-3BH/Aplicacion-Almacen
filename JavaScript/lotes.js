@@ -9,7 +9,7 @@ function mostrarLotes(data) {
         htmlToAppend += `
               <tr>
                   <td>${lote.IDLote}</td>
-                  <td>${lote.matricula}</td>
+                  <td>${lote.matricula.toUpperCase()}</td>
                   <td>${lote.fecha}</td>
                   <td>${lote.pesoLote}</td>
                   <td>
@@ -25,7 +25,7 @@ function mostrarLotes(data) {
 
 function setCatID(id) {
     sessionStorage.setItem("IDLote", id);
-    location.href = "productosDeLote.html";
+    location.href = "paquetesDeLote.html";
 }
 
 

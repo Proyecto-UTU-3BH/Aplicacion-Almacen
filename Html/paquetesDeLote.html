@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="/Css/paquetesDeLote.css">
+    <script src="/JavaScript/cerrarSesion.js"></script>
+    <script src="/JavaScript/paquetesDeLote.js"></script>
+</head>
+
+<body>
+    <div id="mySidenav" class="sidenav">
+        <img src="/Imagenes/LogoDelSistema.png" width="120" alt="LogoDelSistema">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/Html/Perfil.html">Perfil</a>
+        <a href="/Html/homepageAlmacen.html">Ver Paquetes</a>
+        <a href="/Html/ingresarPaquete.html">Ingresar Paquetes</a>
+        <a href="/Html/verLote.html">Ver Lote</a>
+        <a href="/Html/asignarLote.html">Asignar Lote</a>
+        <a href="/Html/llegadaSalida.html">Llegada y salida de camiones</a>
+        <a class="cerrarseison" href="#" id="logOut">Cerrar Sesion</a>
+
+        <div class="idioma-container">
+            <span class="idioma-label">Español</span>
+            <label class="switch">
+                <input type="checkbox" id="idiomaCheckbox">
+                <span class="slider round"></span>
+            </label>
+            <span class="idioma-label">Inglés</span>
+        </div>
+    </div>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+        const checkbox = document.getElementById('idiomaCheckbox');
+
+        checkbox.addEventListener('change', function () {
+            if (checkbox.checked) {
+                localStorage.setItem('idioma', 'ingles');
+                window.location.href = '/HTML EN/verLote.html';
+            } else {
+                localStorage.setItem('idioma', 'espanol');
+                window.location.href = '/HTML/verLote.html';
+            }
+        });
+
+        const idiomaSeleccionado = localStorage.getItem('idioma');
+
+        if (idiomaSeleccionado === 'ingles') {
+            checkbox.checked = true;
+        } else {
+            checkbox.checked = false;
+        }
+    </script>
+
+    <div class="content">
+        <h2>Paquetes de Lote ID <span id="IDLote"></span></h1>
+            <a href="/Html/verLote.html"><button id="verLotesBtn" class="ver-lote-btn">Ver Lotes</button></a>
+    </div>
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID Producto</th>
+                    <th>Destino</th>
+                    <th>Estado</th>
+                    <th>Tipo</th>
+                    <th>Remitente</th>
+                    <th>Destinatario</th>
+                    <th>Calle</th>
+                    <th>Nº Puerta</th>
+                    <th>Forma de Entrega</th>
+                    <th>Peso</th>
+                </tr>
+            </thead>
+            <tbody id="productos"></tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>
