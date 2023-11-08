@@ -6,8 +6,28 @@
 }
 
 body {
-  background-color: #1eb7d9;
+  background-color: #d2ecf9;
+  margin: 0;
+  padding: 0;
 }
+
+.centrar-loader {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  height: 80vh; 
+}
+
+.loader {
+  width: 100px; 
+  height: 100px; 
+  aspect-ratio: 1; 
+  border-radius: 50%;
+  border: 16px solid lightblue;
+  border-right-color: #1891ac;
+  animation: l2 1s infinite linear;
+}
+  @keyframes l2 {to{transform: rotate(1turn)}}
 
 .sidenav {
   height: 100%;
@@ -45,6 +65,7 @@ body {
   right: 25px;
   font-size: 30px;
   margin-left: 50px;
+  color: #f1f1f1;
 }
 
 @media screen and (max-height: 450px) {
@@ -58,10 +79,15 @@ body {
 }
 
 .sidenav img {
-  width: 120;
+  width: 120px;
   display: block;
-  margin:0 50px 20px 45px;
+  margin: 0 50px 20px 45px;
   opacity: 0.7;
+}
+
+#main {
+  margin-left: 250px;
+  padding: 15px;
 }
 
 h2 {
@@ -70,11 +96,105 @@ h2 {
   margin-bottom: 19px;
   margin-top: 19px;
   text-align: center;
-  color: #fff;
+  color: #000;
 }
 
-.show {
-  left: 0;
+.container {
+  width: 80%;
+  margin: 0 auto 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.insertar {
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #f2f2f2;
+}
+
+.insertar button {
+  border: none;
+  border-radius: 3px;
+  background-color: #007BFF;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.insertar button:hover {
+  background-color: #0056b3;
+}
+
+.ver-productos-btn {
+  padding: 8px 13px; 
+  background-color: #1891ac; 
+  color: #fff; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+
+.ver-productos-btn:hover {
+  background-color: #0aa8cc; 
+  color:  #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .sidenav {
+    padding-top: 60px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
+
+  .sidenav img {
+    width: 80px;
+    margin: 0 30px 15px 25px;
+  }
+
+  .sidenav .closebtn {
+    right: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  table {
+    font-size: 14px;
+  }
+
+  th,
+  td {
+    padding: 8px;
+  }
 }
 
 .idioma-container {
@@ -131,5 +251,3 @@ input:checked + .slider {
 input:checked + .slider:before {
   transform: translateX(16px); 
 }
-
-

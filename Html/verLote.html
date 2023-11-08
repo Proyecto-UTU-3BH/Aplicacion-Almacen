@@ -7,6 +7,7 @@
   <title>Inicio</title>
   <link rel="stylesheet" href="/Css/VerLote.css">
   <script src="/JavaScript/cerrarSesion.js"></script>
+  <script src="/JavaScript/lotes.js"></script>
 </head>
 
 <body>
@@ -62,7 +63,27 @@
         }
 </script>
 
-  <h2>Lotes</h2>
+  <h2>Listado de Lotes</h2>
+
+  <div class="container" id="container">
+    <div class="insertar">
+      <a href="/Html/asignarLote.html"><button>Ingresar Lote</button></a>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>IDLote</th>
+          <th>Vehiculo</th>
+          <th>Fecha</th>
+          <th>Peso Lote</th>
+          <th>Productos</th>
+        </tr>
+      </thead>
+      <tbody id="lotes"></tbody>
+    </table>
+  </div>
+
+  <script src="/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 
 </body>
 

@@ -10,6 +10,8 @@ function generarCodigoAleatorio(largo) {
 
 document.addEventListener("DOMContentLoaded", function () {
 
+    let userData = JSON.parse(localStorage.getItem("userData"));
+    const almacenID=userData.almacen_id
     const token = localStorage.getItem("access_token");
 
     const headers = {
@@ -20,6 +22,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const urlIngresarPaquete = "http://localhost:8001/api/productos";
     const urlAlmacenamiento = "http://localhost:8001/api/almacena";
 
+
+    document.getElementById('id_almacen').value=almacenID;
+    
     if (sessionStorage.getItem("productoId") != null) {
         document.getElementById('id_producto').value=sessionStorage.getItem("productoId");
     }
