@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicio</title>
-  <link rel="stylesheet" href="/Css/LlegadaSalida.css">
-  <script src="/JavaScript/cerrarSesion.js"></script>
-  <script src="/JavaScript/llegadaSalida.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="/Css/LlegadaSalida.css">
+    <script src="/JavaScript/cerrarSesion.js"></script>
+    <script src="/JavaScript/llegadaSalida.js"></script>
 </head>
 
 <body>
@@ -17,11 +17,12 @@
         <a href="/Html EN/perfil.html">Profile</a>
         <a href="/Html EN/homepageAlmacen.html">See Packages</a>
         <a href="/Html EN/ingresarPaquete.html">Enter Package</a>
-        <a href="/Html EN/verLote.html">See Batches</a>
+        <a href="/Html EN/modificarPaquete.html">Modify Package</a>
+        <a href="/Html EN/verLote.html">See Batch</a>
         <a href="/Html EN/asignarLote.html">Assign Batch</a>
         <a href="/Html EN/llegadaSalida.html">Arrival and departure of vehicles</a>
         <a class="cerrarseison" href="#" id="logOut">Sign off</a>
-    
+
         <div class="idioma-container">
             <span class="idioma-label">Spanish</span>
             <label class="switch">
@@ -31,18 +32,18 @@
             <span class="idioma-label">English</span>
         </div>
     </div>
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 
-<script>
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-    }
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
 
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-    }
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
 
-    const checkbox = document.getElementById('idiomaCheckbox');
+        const checkbox = document.getElementById('idiomaCheckbox');
 
         checkbox.addEventListener('change', function () {
             if (checkbox.checked) {
@@ -61,33 +62,33 @@
         } else {
             checkbox.checked = false;
         }
-</script>
-  <h2>Enter vehicle information</h2>
+    </script>
+    <h2>Enter vehicle information</h2>
 
-  <form id="llegadaSalida">
+    <form id="llegadaSalida">
 
-    <label for="Ruta">Route ID:</label>
-    <input type="number" id="ruta_id" name="Ruta" required>
+        <label for="Ruta">Route ID:</label>
+        <input type="number" id="ruta_id" name="Ruta" required>
 
-    <label for="Almacen">Warehouse ID:</label>
-    <input type="number" id="almacen_id" name="Almacén" required>
+        <label for="Almacen">Warehouse ID:</label>
+        <input type="number" id="almacen_id" name="Almacén" required>
 
-    <label for="ID Vehiculo">Vehicle ID:</label>
-    <input type="number" id="vehiculo_id" name="ID Vehiculo" required>
+        <label for="ID Vehiculo">Vehicle ID:</label>
+        <input type="number" id="vehiculo_id" name="ID Vehiculo" required>
 
-    <label for="Hora llegada">Check In:</label>
-    <input type="time" id="hora_llegada" name="Hora llegada" required>
+        <label for="Hora llegada">Check In:</label>
+        <input type="time" id="hora_llegada" name="Hora llegada" required>
 
-    <label for="Hora salida">Check Out:</label>
-    <input type="time" id="hora_salida" name="Hora salida" required>
+        <label for="Hora salida">Check Out:</label>
+        <input type="time" id="hora_salida" name="Hora salida" required>
 
-    <label for="fecha">Date:</label>
-    <input type="date" id="fecha" name="fecha" required>
-    
-    <input type="submit" value="Send">
-  </form>
+        <label for="fecha">Date:</label>
+        <input type="date" id="fecha" name="fecha" required>
 
-  <script src="/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+        <input type="submit" value="Send">
+    </form>
+
+    <script src="/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 </body>
 
 </html>

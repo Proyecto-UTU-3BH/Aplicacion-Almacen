@@ -18,11 +18,12 @@
         <a href="/Html EN/perfil.html">Profile</a>
         <a href="/Html EN/homepageAlmacen.html">See Packages</a>
         <a href="/Html EN/ingresarPaquete.html">Enter Package</a>
-        <a href="/Html EN/verLote.html">See Batches</a>
+        <a href="/Html EN/modificarPaquete.html">Modify Package</a>
+        <a href="/Html EN/verLote.html">See Batch</a>
         <a href="/Html EN/asignarLote.html">Assign Batch</a>
         <a href="/Html EN/llegadaSalida.html">Arrival and departure of vehicles</a>
         <a class="cerrarseison" href="#" id="logOut">Sign off</a>
-    
+
         <div class="idioma-container">
             <span class="idioma-label">Spanish</span>
             <label class="switch">
@@ -33,7 +34,6 @@
         </div>
     </div>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
@@ -82,16 +82,16 @@
                             <div class="col-md-6">
                                 <label class="labels">Name</label><input type="text" class="form-control mb-3"
                                     id="nombre" required disabled>
-                                <label class="labels"></label>Second Surname<input type="text"
-                                    class="form-control mb-3" id="apellido2" disabled>
+                                <label class="labels"></label>Second Surname<input type="text" class="form-control mb-3"
+                                    id="apellido2" disabled>
                                 <label class="labels"></label>Telephone Contact<input type="tel"
                                     class="form-control mb-3" id="tel" required>
                                 <label class="labels">Password</label><input type="password" class="form-control mb-3"
                                     id="password" required>
                             </div>
                             <div class="col-md-6">
-                                <label class="labels"></label>Surname<input type="text"
-                                    class="form-control mb-3" id="apellido1" required disabled>
+                                <label class="labels"></label>Surname<input type="text" class="form-control mb-3"
+                                    id="apellido1" required disabled>
                                 <label class="labels">Email</label><input type="text" class="form-control mb-3"
                                     id="email" required disabled>
                                 <label class="labels">Profile Picture</label><input type="file"
