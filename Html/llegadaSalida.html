@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="/Css/LlegadaSalida.css">
   <script src="/JavaScript/cerrarSesion.js"></script>
   <script src="/JavaScript/llegadaSalida.js"></script>
+  <link rel="stylesheet" href="/Css/bootstrap.min.css">
 </head>
 
 <body>
@@ -25,44 +26,44 @@
     <div class="idioma-container">
       <span class="idioma-label">Español</span>
       <label class="switch">
-          <input type="checkbox" id="idiomaCheckbox">
-          <span class="slider round"></span>
+        <input type="checkbox" id="idiomaCheckbox">
+        <span class="slider round"></span>
       </label>
       <span class="idioma-label">Inglés</span>
+    </div>
   </div>
-</div>
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 
-<script>
+  <script>
     function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("mySidenav").style.width = "250px";
     }
 
     function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("mySidenav").style.width = "0";
     }
 
     const checkbox = document.getElementById('idiomaCheckbox');
 
-        checkbox.addEventListener('change', function () {
-            if (checkbox.checked) {
-                localStorage.setItem('idioma', 'ingles');
-                window.location.href = '/HTML EN/llegadaSalida.html';
-            } else {
-                localStorage.setItem('idioma', 'espanol');
-                window.location.href = '/HTML/llegadaSalida.html';
-            }
-        });
+    checkbox.addEventListener('change', function () {
+      if (checkbox.checked) {
+        localStorage.setItem('idioma', 'ingles');
+        window.location.href = '/HTML EN/llegadaSalida.html';
+      } else {
+        localStorage.setItem('idioma', 'espanol');
+        window.location.href = '/HTML/llegadaSalida.html';
+      }
+    });
 
-        const idiomaSeleccionado = localStorage.getItem('idioma');
+    const idiomaSeleccionado = localStorage.getItem('idioma');
 
-        if (idiomaSeleccionado === 'ingles') {
-            checkbox.checked = true;
-        } else {
-            checkbox.checked = false;
-        }
-</script>
-  <h2>Ingrese datos del vehiculo</h2>
+    if (idiomaSeleccionado === 'ingles') {
+      checkbox.checked = true;
+    } else {
+      checkbox.checked = false;
+    }
+  </script>
+  <h2 id="encabezado">Ingrese datos del vehiculo</h2>
 
   <form id="llegadaSalida">
 
@@ -83,11 +84,45 @@
 
     <label for="fecha">Fecha:</label>
     <input type="date" id="fecha" name="fecha" required>
-    
-    <input type="submit" value="Enviar">
+
+    <div class="btn-container">
+      <input type="submit" id="enviar" value="Enviar">
+      <button type="button" id="modal" data-bs-toggle="modal" data-bs-target="#miModal">
+        Ver Vehiculos
+      </button>
+    </div>
   </form>
 
+  <div class="modal fade" id="miModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel">Listado Vehiculos</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Matrícula</th>
+                <th>Seleccionar</th>
+              </tr>
+            </thead>
+            <tbody id="vehiculos">
+
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+  <script src="/JavaScript/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
