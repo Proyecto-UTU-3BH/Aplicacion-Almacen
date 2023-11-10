@@ -98,11 +98,24 @@ document.addEventListener("DOMContentLoaded", function () {
                 icon: 'warning',
                 confirmButtonText: 'OK'
             });
+          } else {
+            Swal.fire({
+              title: 'Error',
+              text: 'Datos equivocados. Por favor, verifica la información.',
+              icon: 'error',
+              confirmButtonText: 'Ok'
+          });
           }
         }
         })
         .catch(error => {
           console.error("Error:", error);
+          Swal.fire({
+            title: 'Error',
+            text: 'Datos equivocados. Por favor, verifica la información.',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        });
         });
     });
 
@@ -129,10 +142,22 @@ document.addEventListener("DOMContentLoaded", function () {
           } else {
             const errorMessage = await response.text(); 
             console.error("Error en la solicitud:", errorMessage);
+            Swal.fire({
+              title: 'Error',
+              text: 'Verifique que los ID de Producto y Almacen existan',
+              icon: 'error',
+              confirmButtonText: 'Ok'
+          });
           }
         })
         .catch(error => {
           console.error("Error:", error);
+          Swal.fire({
+            title: 'Error',
+            text: 'Datos equivocados. Por favor, verifica la información.',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        });
         });
     });
 
