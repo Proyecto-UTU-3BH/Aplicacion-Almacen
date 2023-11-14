@@ -14,21 +14,21 @@
     <div id="mySidenav" class="sidenav">
         <img src="/Imagenes/LogoDelSistema.png" width="120" alt="LogoDelSistema">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="/Html/Perfil.html">Perfil</a>
-        <a href="/Html/homepageAlmacen.html">Ver Paquetes</a>
-        <a href="/Html/ingresarPaquete.html">Ingresar Paquetes</a>
-        <a href="/Html/verLote.html">Ver Lote</a>
-        <a href="/Html/asignarLote.html">Asignar Lote</a>
-        <a href="/Html/llegadaSalida.html">Llegada y salida de camiones</a>
-        <a class="cerrarseison" href="#" id="logOut">Cerrar Sesion</a>
-
+        <a href="/Html EN/perfil.html">Profile</a>
+        <a href="/Html EN/homepageAlmacen.html">See Packages</a>
+        <a href="/Html EN/ingresarPaquete.html">Enter Package</a>
+        <a href="/Html EN/verLote.html">See Batch</a>
+        <a href="/Html EN/asignarLote.html">Assign Batch</a>
+        <a href="/Html EN/llegadaSalida.html">Arrival and departure of vehicles</a>
+        <a class="cerrarseison" href="#" id="logOut">Sign off</a>
+    
         <div class="idioma-container">
-            <span class="idioma-label">Español</span>
+            <span class="idioma-label">Spanish</span>
             <label class="switch">
                 <input type="checkbox" id="idiomaCheckbox">
                 <span class="slider round"></span>
             </label>
-            <span class="idioma-label">Inglés</span>
+            <span class="idioma-label">English</span>
         </div>
     </div>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
@@ -64,24 +64,24 @@
     </script>
 
     <div class="content">
-        <h2>Paquetes de Lote ID <span id="IDLote"></span></h2>
-            <a href="/Html/verLote.html"><button id="verLotesBtn" class="ver-lote-btn">Ver Lotes</button></a>
+        <h2>Batch ID <span id="IDLote"></span> Packages</h2>
+            <a href="/Html/verLote.html"><button id="verLotesBtn" class="ver-lote-btn">See Batches</button></a>
     </div>
 
     <div class="container">
         <table>
             <thead>
                 <tr>
-                    <th>ID Producto</th>
-                    <th>Destino</th>
-                    <th>Estado</th>
-                    <th>Tipo</th>
-                    <th>Remitente</th>
-                    <th>Destinatario</th>
-                    <th>Calle</th>
-                    <th>Nº Puerta</th>
-                    <th>Forma de Entrega</th>
-                    <th>Peso</th>
+                    <th>ID</th>
+                    <th>Destinatino</th>
+                    <th>Status</th>
+                    <th>Type</th>
+                    <th>Sender</th>
+                    <th>Addressee</th>
+                    <th>Street</th>
+                    <th>Door N°</th>
+                    <th>Delivery Method</th>
+                    <th>Weight</th>
                 </tr>
             </thead>
             <tbody id="productos"></tbody>

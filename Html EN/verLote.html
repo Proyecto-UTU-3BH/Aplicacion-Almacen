@@ -7,6 +7,7 @@
   <title>Inicio</title>
   <link rel="stylesheet" href="/Css/VerLote.css">
   <script src="/JavaScript/cerrarSesion.js"></script>
+  <script src="/JavaScript/lotes.js"></script>
 </head>
 
 <body>
@@ -63,7 +64,27 @@
         }
 </script>
 
-  <h2>Batches</h2>
+<h2>Batchs List</h2>
+
+<div class="container" id="container">
+  <div class="insertar">
+    <a href="/Html EN/asignarLote.html"><button>Enter Batch</button></a>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Batch ID</th>
+        <th>Vehicle</th>
+        <th>Transport Date</th>
+        <th>Batch Weight</th>
+        <th>Packages</th>
+      </tr>
+    </thead>
+    <tbody id="lotes"></tbody>
+  </table>
+</div>
+
+<script src="/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 
 </body>
 
