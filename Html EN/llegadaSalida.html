@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/Css/LlegadaSalida.css">
     <script src="/JavaScript/cerrarSesion.js"></script>
     <script src="/JavaScript/llegadaSalida.js"></script>
+    <link rel="stylesheet" href="/Css/bootstrap.min.css">
 </head>
 
 <body>
@@ -17,7 +18,6 @@
         <a href="/Html EN/perfil.html">Profile</a>
         <a href="/Html EN/homepageAlmacen.html">See Packages</a>
         <a href="/Html EN/ingresarPaquete.html">Enter Package</a>
-        <a href="/Html EN/modificarPaquete.html">Modify Package</a>
         <a href="/Html EN/verLote.html">See Batch</a>
         <a href="/Html EN/asignarLote.html">Assign Batch</a>
         <a href="/Html EN/llegadaSalida.html">Arrival and departure of vehicles</a>
@@ -63,7 +63,7 @@
             checkbox.checked = false;
         }
     </script>
-    <h2>Enter vehicle information</h2>
+    <h2 id="encabezado">Enter vehicle information</h2>
 
     <form id="llegadaSalida">
 
@@ -85,10 +85,44 @@
         <label for="fecha">Date:</label>
         <input type="date" id="fecha" name="fecha" required>
 
-        <input type="submit" value="Send">
+        <div class="btn-container">
+            <input type="submit" id="enviar" value="Send">
+            <button type="button" id="modal" data-bs-toggle="modal" data-bs-target="#miModal">
+              See Vehicles
+            </button>
+        </div>
     </form>
 
+    <div class="modal fade" id="miModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalLabel">Listado Vehiculos</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Registration Number</th>
+                    <th>Select</th>
+                  </tr>
+                </thead>
+                <tbody id="vehiculos">
+    
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
     <script src="/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script src="/JavaScript/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
