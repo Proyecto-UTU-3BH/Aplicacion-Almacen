@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let textarea = document.getElementById('producto_ids');
     
     textarea.addEventListener('focus', function () {
-        if (textarea.value.trim() === 'Ingrese los ID de Producto separados por un Enter, ejemplo:\n1\n2\n3') {
+        if (textarea.value.trim() === 'Ingrese los ID de Producto separados por un Enter, ejemplo:\n1\n2\n3' || textarea.value.trim() === 'Enter Product IDs separated by an Enter, for example:\n1\n2\n3') {
             textarea.value = '';
         }
     });
